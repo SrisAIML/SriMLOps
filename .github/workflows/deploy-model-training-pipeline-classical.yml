@@ -32,7 +32,7 @@ jobs:
 
         
       secrets:
-          creds: ${{secrets.AZURE_CREDENTIALS}} 
+          creds: ${{secrets.AZURE_MLOPSPRACTICE_CREDENTIALS}} 
         
   register-dataset:
     needs: get-config
@@ -48,7 +48,7 @@ jobs:
     #   AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       
     secrets:
-      creds: ${{secrets.AZURE_CREDENTIALS}}
+      creds: ${{secrets.AZURE_MLOPSPRACTICE_CREDENTIALS}}
   
   register-environment:
       needs: get-config
@@ -63,7 +63,7 @@ jobs:
       #   AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       #   AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       secrets:
-          creds: ${{secrets.AZURE_CREDENTIALS}}
+          creds: ${{secrets.AZURE_MLOPSPRACTICE_CREDENTIALS}}
       
   run-pipeline:
       needs: [get-config,register-environment,create-compute,register-dataset]
@@ -78,4 +78,4 @@ jobs:
       #   AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       #   AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       secrets:
-          creds: ${{secrets.AZURE_CREDENTIALS}}
+          creds: ${{secrets.AZURE_MLOPSPRACTICE_CREDENTIALS}}
